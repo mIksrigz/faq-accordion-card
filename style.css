@@ -186,6 +186,21 @@ h6 {
   display: none;
  }
 
+ footer{
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #fff;
+ }
+ footer a{
+  color: #fff;
+ }
+
+ footer a:hover{
+  color: #ddd;
+ }
+
  @media(min-width: 1000px) {
   main{
     max-width: 950px;
