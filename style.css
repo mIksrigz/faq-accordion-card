@@ -1,6 +1,6 @@
 :root {
-  --Mobile: 375px;
-  --Desktop: 1440px;
+  /* --Mobile: 375px;
+  --Desktop: 1440px; */
 
   --first-background-color: hsl(273, 75%, 66%);
   --second-background-color: hsl(240, 73%, 65%);
@@ -28,6 +28,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -56,112 +57,106 @@ body {
   font-size: var(--regular-font-size);
   color: var(--medium-text-color);
   background: linear-gradient(var(--first-background-color),
-      var(--second-background-color));
+  var(--second-background-color));
+  /* background: url(./images/bg-pattern-mobile.svg); */
 }
 
 main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  border: 2px solid blue;
 }
 
-.wrapper{
-  background-color: #FFF;
-  padding: 4rem 1.5rem;
-  border-radius: 1rem;
-  width: 90%;
-}
-
-.images-container{
+.wrapper {
   position: relative;
+  border: 2px solid green;
+  min-height: 700px;
+  width: 100%;
 }
 
-.images-container::after {
+.img-container{
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+}
+.img-container::after{
+  position: absolute;
+  top: 70px;
   content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  background: url(./images/bg-pattern-mobile.svg) no-repeat center center / contain;
 }
 
-.mobile-image{
-  position: absolute;
-  top: -170px;
-  left: 30px;
-  right: 30px;
+.accordion{
+  border: 1px solid red;
+  display: grid;
+  gap: 1.75rem;
+  background-color: white;
+  width: 90%;
+  margin: 8rem auto auto;
+  padding: 8rem 1.5rem 4rem;
+  border-radius: 1.5rem;
 }
 
-.desktop-image {
-  display: none;
-}
-
-.text-container{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.section-title{
-  color: var(--dark-text-color);
+.accordion-title {
   font-size: 2rem;
+  font-weight: var(--bold-font-weight);
+  color: var(--dark-text-color);
   text-align: center;
 }
 
-.question-answer-pair{
+.content-container {
   position: relative;
 }
 
-.question-answer-pair::after{
+.content-container::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  display: block;
-  height: 1px;
   width: 100%;
+  height: 2px;
   background-color: var(--horizontal-line-color);
+  bottom: -1rem;
 }
 
-.question {
-  position: relative;
+.question-container{
+  display: flex;
   font-size: 0.875rem;
-}
-
-.question::after {
-  content: '';
   cursor: pointer;
-  position: absolute;
-  right: -5px;
-  top: 5px;
-  width: 8px;
-  height: 8px;
-  background: url(./images/icon-arrow-down.svg) no-repeat center center / cover;
-
 }
 
-.answer{
-  color: var(--light-text-color);
-  margin-top: 0.825rem;
+.question{
+  flex: 1;
+}
+
+.arrow{
+  border: 1px solid blue;
+  width: 20px;
+  height: 20px;
+  background: url(./images/icon-arrow-down.svg) no-repeat center center;
+  /* background-color: yellowgreen; */
+}
+
+.answer {
   width: 90%;
+  color: var(--light-text-color);
 }
 
-.hide {
+/*utility classes*/
+.inactive {
   display: none;
 }
 
 .active{
-  font-weight: var(--bold-font-weight);
   color: var(--dark-text-color);
+  font-weight: var(--bold-font-weight);
+  margin-bottom: 1rem;
 }
 
-@media(min-width: 600px) {
-  .desktop-image {
-    display: block;
-  }
 
-  .mobile-image {
-    display: none;
-  }
+.arrow-active{
+  transform: rotate(180deg);
 }
