@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution](https://your-solution-url.com)
-- Live Site URL: [site](https://your-live-site-url.com)
+- Live Site URL: [site](https://accordion-iksrigz.netlify.app/)
 
 ### Built with
 
